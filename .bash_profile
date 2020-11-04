@@ -39,7 +39,6 @@ python ~/tools/Sublist3r/sublist3r.py -d $1 -o sublister.txt
 /root/go/bin/assetfinder --subs-only $1 > assets.txt
 /root/go/bin/subfinder -d $1 -all -recursive -silent -o subfinder.txt
 /root/tools/findomain-linux --target $1 --unique-output findomains.txt
-# ffuf -w /home/rjlahari/wordlist/all.txt -u "https://FUZZ.$1/" -v | grep "| URL |" | awk '{print $4}' > fuzz.txt
 cat *.txt | sort -u > subdomains.txt
 cat subdomains.txt | httpx -silent -follow-redirects   > final.txt
 echo "Total Subdomains Found" 
