@@ -66,3 +66,11 @@ echo $1 | gau | gf sqli > sqli.txt
 fuzz() {
 ffuf -w $1 -u $2 -r -recursion -c -sf 
 }
+
+nucleiscan() {
+nuclei -l $1 -t /root/nuclei-templates -o nuclei.txt
+}
+
+nucleiscan() {
+nuclei -l $1 -t /root/nuclei-templates -o nuclei.txt
+}
